@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="body">
     <form action="/todo.html">
     <h1> Create To Do List </h1>
     <label for="Topic">Topic</label>
-    <input type="text" id="topic" > <br> <br>
+    <input type="text" id="topicId" value="" placeholder="Type your Topic"> <br> <br>
     <label for="Date">Date</label>
-    <input type="date" id="date"> <br> <br>
-    <label for="details">Details</label>
-    <input type="text" id="details">
-    <input type="submit" value="Submit">
+    <input type="date" id="date" value=""> <br> <br>
+    <label for="details-label">Details</label>
+    <input type="text" id="details-id" value="" placeholder="Type the details list">
+    <input type="submit" value="Submit" id="submit">
+     <button type="button" onclick="myFunction"> Submit</button>
     </form>
+    <br><br>
+
+    <button type="button"> <a href="/main.html">Go to Previouse Page</a></button>
 
 
+    <div class="fruits">Apple</div>
+    <div class="fruits">Banana</div>
+    <div class="fruits">Mango</div>
 </body>
+<script src="todo.js"></script>
 </html>
