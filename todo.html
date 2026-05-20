@@ -7,25 +7,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="body">
-    <form action="/todo.html">
-    <h1> Create To Do List </h1>
-    <label for="Topic">Topic</label>
-    <input type="text" id="topicId" value="" placeholder="Type your Topic"> <br> <br>
-    <label for="Date">Date</label>
-    <input type="date" id="date" value=""> <br> <br>
-    <label for="details-label">Details</label>
-    <input type="text" id="details-id" value="" placeholder="Type the details list">
-    <input type="submit" value="Submit" id="submit">
-     <button type="button" onclick="myFunction"> Submit</button>
+    <form class="Form" action="todo.html">
+        <h1> Create To Do List </h1>
+        Topic: <input type="text" id="topicId" value="valuex" required="true"  placeholder="Type your Topic"> <br><br>
+        Date: <input type="date" id="dateid" value="datex" required="true"  placeholder="Type your Date"> <br><br>
+        Details: <input type="text" id="detailsId" value="detailsx" required="true"  placeholder="Type your Details"> <br><br>
+        <input type="submit" id="submit" value="Submit" onclick="consoleIt()">
     </form>
-    <br><br>
+    <button class="Butt02" type="button"> <a href="/main.html">&larr;</a></button>
 
-    <button type="button"> <a href="/main.html">Go to Previouse Page</a></button>
-
-
-    <div class="fruits">Apple</div>
-    <div class="fruits">Banana</div>
-    <div class="fruits">Mango</div>
 </body>
 <script src="todo.js"></script>
 </html>

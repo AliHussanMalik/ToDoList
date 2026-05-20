@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>To Do List</h1>
-    <h2> <a href="todo.html"> Add New Task </a> </h2>
-
-    <h1 id="welcome-msg" value="welcome-msg-value"> Welcome here </h1>
+    <h1 class="Head1">To Do List</h1>
+    <h2 class="Head2"> <a href="todo.html"> Add New Task </a> </h2>
+     <div>
+        <h1 id="Task02">Task</h1>
+        <h2 id="Date02">Date</h2>
+        <p id="Details02">Details</p>
+    </div>
+    <script>
+        var intuitiveArray = localStorage.getItem(ToDoArray.Task)
+        console.log(intuitiveArray)
+        document.getElementById("Task02").textContent = "Kaya Likhon "
+        document.getElementById("Date02").textContent = intuitiveArray.Date
+        document.getElementById("Details02").textContent = "Apny Muqaddar Ka Haal"
+        console.log(intuitiveArray.Task)
+        console.log(intuitiveArray.Date)
+        console.log(intuitiveArray.Details)
+    </script>
 </body>
 <script src="todo.js"></script>
 </html>
