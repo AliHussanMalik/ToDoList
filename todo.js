@@ -1,61 +1,38 @@
-function consoleIt(){
+function consoleIt() {
     let Topicx = document.getElementById("topicId").value;
     let Datex = document.getElementById("dateid").value;
     let Detailsx = document.getElementById("detailsId").value;
-    console.log("Topic" , Topicx)
-    console.log("Date", Datex)
-    console.log("Details", Detailsx)
 
-    alert("Pre Mature Alert 01")
-    function myObject(tpc,dt,dtl,...rest){
+    function MyObject(tpc, dt, dtl) {
         this.Topic = tpc;
         this.Date = dt;
         this.Details = dtl;
-        console.log(`Object In Function ${myObject}Topic: ${tpc}Date:${dt} Details:${dtl}`)
-        return;
     }
-    alert("Pre Mature Alert 02")    
-    const NewList = new myObject(Topicx,Datex,Detailsx);
-    console.log("Modern List",NewList);
+  
+    const NewList = new MyObject(Topicx, Datex, Detailsx);
 
-    alert("Pre Mature Alert 02.2")
-        const ToDoArr = []
-    ToDoArr.push(NewList)
-    
+    let storedData = localStorage.getItem("ProgrammerF");
+    let currentArray = [];
 
-    alert("Pre Object Alert00")
-    alert("In Between Object Alert 01")
-    console.log("To Do Array 00",ToDoArr);
-    console.log("To Do Array 01",ToDoArr[0]);
-    console.log("To Do Array 02",ToDoArr[1]);
-    alert("In Between Object Alert 01.1")
-    var ReterivedArray = localStorage.getItem("ProgrammerF");
-    console.log("ReterivedArray B4",ReterivedArray)
-    alert("In Between Object Alert 02")
-    if (ReterivedArray === null){
-        alert("In IF")
-        localStorage.setItem("ProgrammerF",JSON.stringify(NewList))
-        var ReterivedArray00 = JSON.parse(localStorage.getItem("ProgrammerF"))
-        var ReterivedArray01 = localStorage.getItem("ProgrammerF")
-        var ReterivedArray02 = localStorage.getItem.ProgrammerF
-        // var ReterivedArray03 = JSON.parse(localStorage.getItem("ProgrammerF"))
-        // var ReterivedArray = NewList
-        console.log("ReterivedArray00 After",ReterivedArray00)
-        console.log("ReterivedArray01 After",ReterivedArray01)
-        console.log("ReterivedArray02 After",ReterivedArray02)
-        // console.log("ReterivedArray03 After",ReterivedArray03)
-        alert("In Between Object Alert 03")
-    }
-    else{
-        alert("In Else")
-            var ReterivedArray = ReterivedArray.concat(JSON.stringify(NewList))
-        localStorage.setItem("ProgrammerF",ReterivedArray)
-        alert("CheckPoint")
-        var ReterivedArrayy =  localStorage.getItem("ProgrammerF")
-            console.log("ReterivedArray IZ",ReterivedArray);
-            alert("Be Alert")
+    if (storedData === null) {
+        currentArray.push(NewList);
+    } else {
+        try {
+            currentArray = JSON.parse(storedData);
+            
+            currentArray.push(NewList);
+        } catch (e) {
+            console.error("Error parsing JSON from localStorage, resetting array:", e);
+            currentArray = [NewList]; 
         }
-    alert("Post Array Alert")
-    return; 
-};
+    }
 
+    // 4. Save the updated array back to localStorage as a JSON string
+    localStorage.setItem("ProgrammerF", JSON.stringify(currentArray));
+
+    // 5. Loop through and print the updated array items safely
+    for (let i = 0; i < currentArray.length; i++) {
+        console.log(`Item ${i}: Topic: ${currentArray[i].Topic}, Date: ${currentArray[i].Date}`);
+    }
+    return; 
+}
