@@ -12,28 +12,14 @@
     <form class="Form" action="main.html">
         <h1 class="MainHeading" id="todoHeading"> Create To Do List </h1>
         Topic: <input type="text" id="topicId" value="" required="true" placeholder="Type your Topic"> <br><br>
-        Date: <input type="date" id="dateid" value="" required="true" placeholder="Type your Date"> <br><br>
+        Date: <input type="date" id="dateId" value="" required="true" placeholder="Type your Date"> <br><br>
         Details: <input type="text" id="detailsId" value="" required="true" placeholder="Type your Details"> <br><br>
-        <input type="submit" id="submit" value="Submit" onclick="consoleIt()">
+        <input type="submit" id="submit" value="Submit" onclick="handleSubmit()">
     </form>
     <button class="Butt02" type="button"> <a href="/main.html">&larr;</a></button>
 
 </body>
-<script>
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString)
-    
-    const page = urlParams.get('index')
-    if (page) {
-        const NewHeading = document.getElementById("todoHeading")
-        NewHeading.innerHTML='Edit Your Task'
-        console.log(`This is the Task ${page}`)
-    }
-    else {
-        console.log("Page does not exist")
-    }
 
-</script>
 <script src="todo.js"></script>
 
 </html>
