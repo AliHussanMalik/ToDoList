@@ -18,7 +18,7 @@ if(page) {
     NewHeading.innerHTML = 'Edit Your Task';
     submitButton.value = 'Update Task';
 
-    topicInput.value = currentTask.Topic;
+    topicInput.value = `This is the value: {${currentTask.Topic}}`;
     dateInput.value = currentTask.Date;
     detailsInput.value = currentTask.Details;
 }
