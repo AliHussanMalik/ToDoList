@@ -1,6 +1,5 @@
 const rawData = localStorage.getItem("Universal Key")
 console.log(`rawData${rawData}`)
-// alert(rawData)
 
 if(rawData) {
     
@@ -25,13 +24,14 @@ if(rawData) {
             window.location.href = `http://127.0.0.1:5500/todo.html?index=${index}`;
         });
         del.addEventListener("click", () => {
-            alert("Delete button clicked")
-            console.log("Delete Button");
-            console.log(currentArray[i])
-            document.removeChild(currentArray.index)
+            itemsArray.splice(index,1);
+            localStorage.setItem("Universal Key", JSON.stringify(itemsArray))
+            newDiv.remove()
         });
+        // newDiv.appendChild(edt)
+        // newDiv.appendChild(del)
+        
         newDiv.innerHTML = `Topic:{${element.Topic}} <br> Date:{${element.Date}}<br>Details: {${element.Details}}`;
-        // alert("In Raw Data")
         container.append(edt, del, newDiv);
     });
 }

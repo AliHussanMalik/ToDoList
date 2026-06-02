@@ -1,14 +1,8 @@
-
-console.log("Is it working?")
-alert("Is it working 01?")
-
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString)
 
 const page = urlParams.get('index')
 const NewHeading = document.getElementById("todoHeading")
-console.log(`QueryString {${queryString}} url Params {${urlParams}}`)
-alert(`page${page}`)
 
 const topicInput = document.getElementById('topicId')
 const dateInput = document.getElementById('dateId')
@@ -19,13 +13,7 @@ const SavedTasks = JSON.parse(localStorage.getItem("Universal Key")) || [];
 const taskIndex = parseInt(page);
 const currentTask = SavedTasks[taskIndex];
 console.log(` Query String {${queryString}} Url Params {${urlParams}} Page{${page}} NewHeading{${NewHeading}} SavedTasks {${SavedTasks}} Task Index {${taskIndex}} current Task {${currentTask}}`)
-alert(currentTask.Topic);
-alert(currentTask.Date);
-alert(currentTask.Details);
-
-alert(`Page Actual${page}`)
 if(page) {
-    alert("Is it working 01.01?")
     console.log(`This is the Task ${page}`)
     NewHeading.innerHTML = 'Edit Your Task';
     submitButton.value = 'Update Task';
@@ -35,7 +23,6 @@ if(page) {
     detailsInput.value = currentTask.Details;
 }
 else {
-    alert(`Page is by passed`)
     console.log("Page does not exist")
 }
 
