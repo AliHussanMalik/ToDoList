@@ -32,18 +32,9 @@ function handleSubmit() {
     let Topicx = document.getElementById("topicId").value;
     let Datex = document.getElementById("dateId").value;
     let Detailsx = document.getElementById("detailsId").value;
-
-    console.log(` Topic ${Topicx} Date ${Datex} Details ${Detailsx}`);
-    alert(` Topic ${Topicx} Date ${Datex} Details ${Detailsx}`);
-
     var currentArray = [];
 
     if (page) {
-        console.log(` Updated Topic ${Topicx} Updated Date ${Datex} updated Details ${Detailsx} Index ${page}`);
-        alert(` Updated Topic ${Topicx} Updated Date ${Datex} updated Details ${Detailsx} Index ${page}`);
-
-        console.log("Your are at right place");
-        alert("Your are at right place");
         let storedData = localStorage.getItem("Universal Key");
         currentArray = JSON.parse(storedData);
 
