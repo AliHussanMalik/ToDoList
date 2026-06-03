@@ -1,5 +1,4 @@
 const rawData = localStorage.getItem("Universal Key")
-console.log(`rawData${rawData}`)
 
 if(rawData) {
     
